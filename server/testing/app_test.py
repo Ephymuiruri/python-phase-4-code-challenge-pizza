@@ -20,6 +20,7 @@ class TestApp:
             restaurants = Restaurant.query.all()
 
             response = app.test_client().get('/restaurants')
+            print(response.status_code)
             assert response.status_code == 200
             assert response.content_type == 'application/json'
             response = response.json
